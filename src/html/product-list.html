@@ -5,6 +5,7 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
   <title>Product List</title>
+  <script type="text/javascript" src="../js/product-list.js"></script>
 </head>
 <body>
   <main class="product-wrapper">
@@ -55,16 +56,8 @@
     </ul>
     <!-- E: product-list -->
   </main>
-  <script>
-    const listTypeChange = (e) => {
-      const list_type = ['btn-list-grid2', 'btn-list-grid1', 'btn-list-randscape'];
-      const now = e.getAttribute('data-label'); // 현재 리스트 타입
-      const next = (list_type.indexOf(now) + 1) > 2 ? list_type[0] : list_type[list_type.indexOf(now) + 1]; // 다음 리스트 타입
-      e.setAttribute('data-label', next);
-      e.className = e.className.replace(now, next);
-      const list = document.getElementById('product-list');
-      list.className = list.className.replace(now.replace('btn-', ''), next.replace('btn-', ''));
-    }
-  </script>
+  <!-- S: 인덱스 바로가기 -->
+  <a href="index.html" class="btn-home"><span class="blind">인덱스 바로가기</span></a>
+  <!-- E: 인덱스 바로가기 -->
 </body>
 </html>
