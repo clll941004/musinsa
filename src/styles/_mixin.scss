@@ -1,0 +1,25 @@
+// for before, after 
+@mixin set_content($width:auto, $height:auto, $color:null, $display:inline-block, $position:relative) {
+	content:"";
+	width:$width;
+	height:$height;
+	display:$display;
+	position:$position;
+    @if $color != null {
+    	background:$color;
+    }
+}
+// 말줄임
+@mixin ellipsis($type:null,$num:2) {
+	overflow:hidden;
+	text-overflow:ellipsis;
+    @if $type == multi {
+        white-space: normal;
+        word-wrap: break-word;
+        display:-webkit-box;
+        -webkit-line-clamp:$num;
+        -webkit-box-orient:vertical;
+    } @else{
+        white-space:nowrap;
+    }
+}

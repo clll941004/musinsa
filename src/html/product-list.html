@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+  <title>Product List</title>
+</head>
+<body>
+  <main class="product-wrapper">
+    <!-- S: product-header -->
+    <div class="product-header">
+      상품 <strong>407,118</strong>개
+      <span class="txt-update">15분전 갱신</span>
+      <button type="button" onclick="listTypeChange(this)" data-label="btn-list-grid2" class="btn-list-type btn-list-grid2"> <!-- type: btn-list-grid2 / btn-list-grid1 / btn-list-randscape -->
+        <span class="blind">리스트 타입 변경</span>
+      </button>
+    </div>
+    <!-- E: product-header -->
+    <!-- S: product-list -->
+    <ul class="product-list list-grid2" id="product-list"> <!-- type: list-grid2 / list-grid1 / list-randscape -->
+      <li>
+        <div class="product-views">
+          <a href="//m.store.musinsa.com/app/goods/1618314">
+            <img src="//image.msscdn.net/images/goods_img/20180921/865862/865862_2_320.jpg" alt="[유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌드 대디 숄더 싱글 롱 코트 [블랙]">
+            <span class="blind">상품 상세보기</span>
+          </a>
+          <div class="product-label-box">
+            <span class="label label-new">NEW</span>
+            <span class="label label-musinsa">무신사 단독</span>
+          </div>
+        </div>
+        <div class="product-infos">
+          <a href="//display.musinsa.com/display/brands/musinsastandard/goods" class="txt-brand">무신사 스탠다드</a>
+          <a href="//m.store.musinsa.com/app/goods/1618314" class="txt-name">[유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌드 대디 숄더
+            싱글 롱 코트 [블랙]</a>
+          <strong class="price">229,500원</strong>
+          <em class="discountrate">10%</em>
+          <del class="origin">255,000원</del>
+        </div>
+      </li>
+      <li>
+        <div class="product-views">
+          <a href="//m.store.musinsa.com/app/goods/810034">
+            <img src="//image.musinsa.com/images/goods_img/20180703/810034/810034_2_320.jpg" alt="척 70 클래식">
+            <span class="blind">상품 상세보기</span>
+          </a>
+        </div>
+        <div class="product-infos">
+          <a href="//display.musinsa.com/display/brands/converse/goods" class="txt-brand">컨버스</a>
+          <a href="//m.store.musinsa.com/app/goods/810034" class="txt-name">척 70 클래식</a>
+          <strong class="price">89,000원</strong>
+        </div>
+      </li>
+    </ul>
+    <!-- E: product-list -->
+  </main>
+  <script>
+    const listTypeChange = (e) => {
+      const list_type = ['btn-list-grid2', 'btn-list-grid1', 'btn-list-randscape'];
+      const now = e.getAttribute('data-label'); // 현재 리스트 타입
+      const next = (list_type.indexOf(now) + 1) > 2 ? list_type[0] : list_type[list_type.indexOf(now) + 1]; // 다음 리스트 타입
+      e.setAttribute('data-label', next);
+      e.className = e.className.replace(now, next);
+      const list = document.getElementById('product-list');
+      list.className = list.className.replace(now.replace('btn-', ''), next.replace('btn-', ''));
+    }
+  </script>
+</body>
+</html>
