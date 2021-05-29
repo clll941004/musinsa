@@ -1,0 +1,138 @@
+// 상품 목록
+.product-wrapper {
+  min-width: $product-min-width;
+  max-width: $product-max-width;
+  margin: 0 auto;
+  .product-header {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    .txt-update {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 12px;
+      color: $gray;
+    }
+    .btn-list-type {
+      float: right;
+      width: 22px; height: 22px;
+      background-size: 100%;
+      &.btn-list-grid1 {
+        background-image: svg_btn_grid1();
+      }
+      &.btn-list-grid2 {
+        background-image: svg_btn_grid2();
+      }
+      &.btn-list-randscape {
+        background-image: svg_btn_randscape();
+      }
+    }
+  }
+  .product-list {
+    // list 공통
+    li {
+      width: 100%;
+    }
+    .product-views {
+      position: relative;
+      width: 100%;
+      padding-top: 120%;
+      background-color: #F1F1F1;
+      a {
+        position: absolute;
+        top: 50%; left: 0;
+        display: block;
+        width: 100%;
+        transform: translateY(-50%);
+        img {
+          width: 100%;
+        }
+      }
+      .product-label-box {
+        position: absolute;
+        bottom: -13px;
+        width: 100%;
+        padding: 0 9px;
+        box-sizing: border-box;
+        .label {
+          float: left;
+          display:block;
+          padding: 6px 6.5px;
+          max-height: 26px;
+          font-size: 11px;
+          color: $white;
+          &.label-new {
+            background-color: #FF9500;
+          }
+          &.label-musinsa {
+            background-color: #18A286;
+          }
+        }
+      }
+    }
+    .product-infos {
+      width: 100%;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      .txt-brand {
+        font-size: 11px;
+      }
+      .txt-name {
+        @include ellipsis('multi', 2);
+        margin: 8px 0 4px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .price {
+        font-size: 16px;
+      }
+      .discountrate {
+        float: right;
+        font-size: 16px;
+        font-weight: bold;
+        color: #FF001F;
+      }
+      .origin {
+        display: block;
+        font-size: 11px;
+        color: $gray;
+      }
+    }
+    // list type change
+    &.list-grid2 {
+      li {
+        float: left;
+        width: 50%;
+      }
+      .product-infos {
+        height: 155px;
+      }
+    }
+    &.list-grid1 {
+      .product-infos {
+        padding-bottom: 40px;
+      }
+    }
+    &.list-randscape {
+      li {
+        display: table;
+      }
+      .product-views {
+        display: table-cell;
+        width: 170px;
+        padding-top: 204px; // 170x1.2
+        .product-label-box {
+          bottom: 0;
+          padding: 0;
+        }
+      }
+      .product-infos {
+        display: table-cell;
+        vertical-align: middle;
+        width: calc(100% - 170px);
+        padding: 0 15px;
+      }
+    }
+  }
+}

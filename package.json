@@ -13,11 +13,13 @@
     "start": "webpack serve"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
     "sass-loader": "^11.1.1",
-    "style-loader": "^2.0.0"
+    "url-loader": "^4.1.1"
   }
 }

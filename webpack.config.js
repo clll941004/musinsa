@@ -1,6 +1,8 @@
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -22,7 +24,10 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }
+            options: {
+              minimize: false,
+              sources: false
+            }
           }
         ]
       },
@@ -39,13 +44,22 @@ module.exports = {
               options: { sourceMap: true },
           },
         ]
+      },
+      { 
+        test: /\.(png|jpe?g|svg|gif)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: 'assets/[name].[ext]'
+          }
+        }
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/html/index.html',
-      filename: 'html/index.html',
+      template: './src/index.html',
+      filename: 'index.html',
     }),
     new HtmlWebPackPlugin({
       template: './src/html/product-list.html',
@@ -58,11 +72,21 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles/style.css',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/assets", to: "assets" },
+      ],
+    }),
   ],
   devtool: 'inline-source-map',
   devServer: {
-    port: 3000,
+    open: true,
+    port: 9000,
     compress: true,
-    contentBase: __dirname + "/dist/html"
+    contentBase: path.resolve('src'),
+    publicPath: '/',
+    hot: true,
+    inline: true,
+    watchContentBase: true,
   }
 };

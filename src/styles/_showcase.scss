@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400');
+
+// 쇼케이스
+.showcase-wrapper {
+  position: absolute;
+  left: 50%;
+  width: 1016px;
+  margin: 0 auto 0 -508px;
+  .showcase {
+    position: relative;
+    width: 100%;
+    height: 1276px;
+    overflow: hidden;
+    font-size: 28px;
+    line-height: 43px;
+    .inner-bg {
+      position: relative;
+      width: 100%; height: 100%;
+    }
+    .inner-contents {
+      position: absolute;
+      top: 0; left: 0;
+      width: calc(100% - 266px); height: 100%;
+      margin: 0 133px;
+      padding: 0 40px;
+      box-sizing: border-box;
+      > * {
+        position: absolute;
+      }
+      p {font-family: 'Nanum Gothic', sans-serif;}
+    }
+    &.showcase-main {
+      .inner-bg {
+        background: url('../assets/main-bg.jpg') no-repeat;
+        background-size: auto 100%;
+      }
+      .txt0 {top: 184px; left: 70px; animation: txt1 .5s;}
+      .txt1 {top: 230px; left: 70px; animation: txt1 .5s;}
+      .txt2 {top: 425px; right: 100px; animation: txt2 1s;}
+      .txt3 {bottom: 240px; left: 70px;}
+      .img0 {bottom: 320px; left: -45px;}
+      .img1 {top: 130px; right: -50px; animation: img1 .5s;}
+      .img2 {bottom: -130px; right: 100px;}
+      .bx-img {
+        width: 260px; height: 260px;
+        overflow: hidden;
+        opacity: 0;
+        animation: opacity 2s;
+        animation-fill-mode: both;
+        animation-delay: .6s;
+        img {
+          position: absolute;
+          top: 0; left: 0;
+          &[data-show="1"] {left:260px}
+          &[data-show="2"] {left:520px}
+          animation: opacity2 2s infinite;
+        }
+      }
+      .bx-img0 {top: 60px; right: -60px; animation-delay: 0s;}
+      .bx-img1 {top: 320px; left: -55px; animation-delay: .3s;}
+      .bx-img2 {top: 605px; left: -85px;}
+      .bx-img3 {top: 580px; left: 205px;}
+      .bx-img4 {top: 580px; left: 465px;}
+      .bx-img5 {bottom: 140px; right: -40px;}
+      .bx-img6 {bottom: -75px; left: -85px;}
+      // Animations For Showcase Main
+      @keyframes txt1 {
+        from {left: -200px; opacity: 0;}
+        to {left: 70px; opacity: 1;}
+      }
+      @keyframes txt2 {
+        from {right: -200px; opacity: 0;}
+        to {right: 100px; opacity: 1;}
+      }
+      @keyframes img1 {
+        from {top: 0; opacity: 0;}
+        to {top: 130px; opacity: 1;}
+      }
+      @keyframes opacity {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+      @keyframes opacity2 {
+        0% {opacity: 1;}
+        90% {opacity: 1;}
+        99% {opacity: .5;}
+        100% {opacity: 1;}
+      }
+    }
+    &.showcase-intro {
+      .txt4 {top: 480px; left: 50%; transform: translateX(-50%);}
+      .txt5 {top: 605px; left: 50%; transform: translateX(-50%);}
+      .txt6 {top: 740px; left: 50%; transform: translateX(-50%);}
+      .inner-bg {
+        background: url('../assets/intro-bg.jpg') no-repeat center fixed;
+      }
+    }
+    &.showcase-visual {
+      background: #d5d5d5;
+    }
+    &.visual0 {
+      .txt7 {top: 445px; left: 50%; transform: translateX(-50%);}
+      .img3 {bottom: -792px; left: -200px;}
+    }
+    &.visual1 {
+      .img4 {top: -206px; left: -200px;}
+      .img5 {top: 350px; right: -20px;}
+      .img6 {
+        bottom: -1320px; left: 50%; opacity: 0; transform: translateX(-50%);
+        &.active {animation: toTop .5s; animation-fill-mode: both;}
+      }
+      .txt8 {top: 490px;}
+      .txt9 {top: 585px; width: 400px;}
+    }
+    &.visual2 {
+      .img7 {
+        top: -820px; left: 50%; transform: translateX(-50%);
+        &.active {animation: toTop2 .5s; animation-fill-mode: both;}
+      }
+      .img8 {
+        bottom: -720px; left: 50%; transform: translateX(-50%);
+        &.active {animation: toLeft .5s; animation-fill-mode: both;}
+      }
+      .txt10 {top: 580px;}
+      .txt11 {top: 675px; width: 430px;}
+    }
+    &.visual3 {
+      .img9 {
+        top: -875px; left: 50%; transform: translateX(-50%);
+        &.active {animation: toLeft .5s; animation-fill-mode: both;}
+      }
+      .img10 {bottom: 420px; right: -110px;}
+      .img11 {top: 760px; left: 50%; transform: translateX(-50%);}
+      .txt12 {bottom: 570px;}
+      .txt13 {bottom: 500px;}
+    }
+    // Animations For Showcase Visuals
+    @keyframes toTop {
+      0% {bottom: -1320px; opacity: 0;}
+      100% {bottom: -500px; opacity: 1; z-index: 10;}
+    }
+    @keyframes toTop2 {
+      0% {top: -20px; opacity: 0;}
+      100% {top: -820px; opacity: 1; z-index: 10;}
+    }
+    @keyframes toLeft {
+      0% {left: 200%; opacity: 0;}
+      100% {left: 50%; opacity: 1;}
+    }
+  }
+}
