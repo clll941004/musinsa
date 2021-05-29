@@ -1,4 +1,5 @@
 // init
+// 새로고침시 로컬스토리지에서 리스트 타입 있는 경우 적용
 const listType = ['btn-list-grid2', 'btn-list-grid1', 'btn-list-randscape'];
 const btn = document.getElementById('btn-list-type');
 const list = document.getElementById('product-list');

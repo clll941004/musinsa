@@ -1,4 +1,3 @@
-const showcaseHeight = 1276;
 // scroll event
 window.addEventListener('scroll', () => {
   const height = window.scrollY;
