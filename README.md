@@ -4,6 +4,9 @@
 ## Build
 1. yarn install
 2. yarn start
+or
+1. npm install
+2. npm start
 
 ## Skills
 - HTML5, SCSS, Javascript, jQuery
