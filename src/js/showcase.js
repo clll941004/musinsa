@@ -1,13 +1,10 @@
 // scroll event
 window.addEventListener('scroll', function() {
-  const height = window.scrollY;
-  console.log(height);
+  const height = window.pageYOffset;
   const visual0 = height - $('.visual0').offset().top;
   const visual1 = height - $('.visual1').offset().top;
   const visual2 = height - $('.visual2').offset().top;
   const visual3 = height - $('.visual3').offset().top;
-  console.log($('.visual0').offset().top);
-  console.log(visual0);
   // main showcase
   $('.img0').css('bottom', (height * 0.5) + 'px');
   $('.img1').css('top', (-height * 0.6) + 80 + 'px');
