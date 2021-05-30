@@ -2,15 +2,20 @@
 무신사 UI 과제 제출용 Github
 
 ## Build
-1. yarn install
-2. yarn start
-or
-1. npm install
-2. npm start
+* use yarn
+    1. yarn install
+    2. yarn start
+
+* use npm
+    1. npm install
+    2. npm start
 
 ## Skills
 - HTML5, SCSS, Javascript, jQuery
 - webpack
+
+## 인덱스 페이지
+- /index.html
 
 ## 상품목록
 - html/product-list.html
