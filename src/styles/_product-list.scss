@@ -81,6 +81,7 @@
       .txt-name {
         max-height: 42px;
         margin: 8px 0 4px;
+        overflow: hidden;
         a {
           @include ellipsis('multi', 2);
           font-size: 14px;

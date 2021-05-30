@@ -27,14 +27,14 @@ window.addEventListener('scroll', function() {
   $('.txt12').css('left', (visual3 * 0.1) + 'px');
   $('.txt13').css('left', (visual3 * 0.1) + 'px');
   // active event
-  if (height > ($('.visual1').offset().top - 100)) {
+  if (height > (visual1 - 100)) {
     $('.img6').addClass('active');
     $('.img7').addClass('active');
   } else {
     $('.img6').removeClass('active');
     $('.img7').removeClass('active');
   }
-  if (height > ($('.visual2').offset().top - 100)) {
+  if (height > (visual2 - 100)) {
     $('.img8').addClass('active');
     $('.img9').addClass('active');
   } else {
@@ -50,11 +50,11 @@ const shows1 = [].slice.call(document.querySelectorAll('[data-show="1"]'));
 const shows2 = [].slice.call(document.querySelectorAll('[data-show="2"]'));
 setInterval(function() {
   now = left[now] <= -520 ? 0 : now + 1;
-  const next = now - 1 < 0 ? 1 : now - 1;
-  const next2 = now - 2 < 0 ? 1 : now - 2;
+  const next0 = now - 1 < 0 ? 1 : now - 1;
+  const next1 = now - 2 < 0 ? 1 : now - 2;
   for (let i = 0 ; i < shows.length ; i ++) {
-    shows[i].style.left= `${left[now]}px`;
-    shows1[i].style.left= `${left[next]}px`;
-    shows2[i].style.left= `${left[next2]}px`;
+    shows[i].style.left= left[now] + 'px';
+    shows1[i].style.left= left[next0] + 'px';
+    shows2[i].style.left= left[next1] + 'px'
   }
 }, 2000);
