@@ -79,10 +79,13 @@
         font-size: 11px;
       }
       .txt-name {
-        @include ellipsis('multi', 2);
+        max-height: 42px;
         margin: 8px 0 4px;
-        font-size: 14px;
-        font-weight: bold;
+        a {
+          @include ellipsis('multi', 2);
+          font-size: 14px;
+          font-weight: bold;
+        }
       }
       .price {
         font-size: 16px;
