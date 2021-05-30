@@ -27,14 +27,14 @@ window.addEventListener('scroll', () => {
   $('.txt12').css('left', (visual3 * 0.1) + 'px');
   $('.txt13').css('left', (visual3 * 0.1) + 'px');
   // active event
-  if (height > (visual1 - 100)) {
+  if (height > ($('.visual1').offset().top - 100)) {
     $('.img6').addClass('active');
     $('.img7').addClass('active');
   } else {
     $('.img6').removeClass('active');
     $('.img7').removeClass('active');
   }
-  if (height > (visual2 - 100)) {
+  if (height > ($('.visual2').offset().top - 100)) {
     $('.img8').addClass('active');
     $('.img9').addClass('active');
   } else {
