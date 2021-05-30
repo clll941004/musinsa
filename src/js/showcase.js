@@ -1,5 +1,5 @@
 // scroll event
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
   const height = window.scrollY;
   const visual0 = height - $('.visual0').offset().top;
   const visual1 = height - $('.visual1').offset().top;
@@ -48,7 +48,7 @@ const left = [0, -260, -520];
 const shows = [].slice.call(document.querySelectorAll('[data-show="0"]'));
 const shows1 = [].slice.call(document.querySelectorAll('[data-show="1"]'));
 const shows2 = [].slice.call(document.querySelectorAll('[data-show="2"]'));
-setInterval(() => {
+setInterval(function() {
   now = left[now] <= -520 ? 0 : now + 1;
   const next = now - 1 < 0 ? 1 : now - 1;
   const next2 = now - 2 < 0 ? 1 : now - 2;
