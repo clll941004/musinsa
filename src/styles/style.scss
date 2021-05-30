@@ -59,6 +59,7 @@
   border-radius: 50%;
   background: svg_home() no-repeat center, rgba(0,0,0,.4);
   background-size: 50%, 100%;
+  z-index: 99;
 }
 
 // 상품목록

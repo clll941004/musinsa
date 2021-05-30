@@ -118,7 +118,7 @@
         &.active {animation: toTop2 .5s; animation-fill-mode: both;}
       }
       .img8 {
-        bottom: -720px; left: 50%; transform: translateX(-50%);
+        bottom: -720px; left: 200%; transform: translateX(-50%);
         &.active {animation: toLeft .5s; animation-fill-mode: both;}
       }
       .txt10 {top: 580px;}
@@ -126,7 +126,7 @@
     }
     &.visual3 {
       .img9 {
-        top: -875px; left: 50%; transform: translateX(-50%);
+        top: -875px; left: 200%; transform: translateX(-50%);
         &.active {animation: toLeft .5s; animation-fill-mode: both;}
       }
       .img10 {bottom: 420px; right: -110px;}
