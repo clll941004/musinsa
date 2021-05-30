@@ -18,11 +18,11 @@
       float: right;
       width: 22px; height: 22px;
       background-size: 100%;
-      &.btn-list-grid1 {
-        background-image: svg_btn_grid1();
+      &.btn-list-card {
+        background-image: svg_btn_card();
       }
-      &.btn-list-grid2 {
-        background-image: svg_btn_grid2();
+      &.btn-list-default {
+        background-image: svg_btn_default();
       }
       &.btn-list-randscape {
         background-image: svg_btn_randscape();
@@ -104,7 +104,7 @@
       }
     }
     // list type change
-    &.list-grid2 {
+    &.list-default {
       li {
         float: left;
         width: 50%;
@@ -113,7 +113,7 @@
         height: 155px;
       }
     }
-    &.list-grid1 {
+    &.list-card {
       .product-infos {
         padding-bottom: 40px;
       }
@@ -136,6 +136,40 @@
         vertical-align: middle;
         width: calc(100% - 170px);
         padding: 0 15px;
+      }
+    }
+  }
+  // 반응형: 태블릿
+  @media screen and (min-width: 768px) {
+    .product-list {
+      &.list-default {
+        li {width: 33%;}
+      }
+      &.list-card {
+        li {
+          width: 50%;
+          float: left;
+          .product-infos {
+            min-height: 175px;
+          }
+        }
+      }
+    }
+  }
+  // 반응형: PC
+  @media screen and (min-width: 1024px) {
+    .product-list {
+      &.list-default {
+        li {width: 25%;}
+      }
+      &.list-randscape {
+        li {
+          width: 50%;
+          float: left;
+          .product-infos {
+            padding: 0 30px 0 15px;
+          }
+        }
       }
     }
   }
