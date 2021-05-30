@@ -12,6 +12,7 @@ module.exports = {
     filename: 'index.js',
     publicPath: '/',
   },
+  target: 'web',
   module: {
     rules: [
       {
